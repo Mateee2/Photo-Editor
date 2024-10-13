@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Photo Editor</h1>
+        
+        <!-- Image Upload -->
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        
+        <!-- Filter Buttons -->
+        <div id="filters" class="filter-buttons">
+            <button onclick="applyFilter('grayscale(100%)')">Grayscale</button>
+            <button onclick="applyFilter('sepia(100%)')">Sepia</button>
+            <button onclick="applyFilter('blur(5px)')">Blur</button>
+            <button onclick="applyFilter('brightness(1.5)')">Brightness</button>
+            <button onclick="applyFilter('contrast(200%)')">Contrast</button>
+            <button onclick="applyFilter('invert(100%)')">Invert</button>
+            <button onclick="applyFilter('saturate(150%)')">Saturate</button>
+            <button onclick="applyFilter('hue-rotate(90deg)')">Hue Rotate</button>
+        </div>
+
+        <!-- Undo/Redo Buttons -->
+        <div id="undoRedo" class="undo-redo-buttons">
+            <button onclick="undo()">Undo</button>
+            <button onclick="redo()">Redo</button>
+        </div>
+        
+        <!-- Display Image -->
+        <div id="imageContainer" class="image-container">
+            <canvas id="imageCanvas" style="display:none;"></canvas>
+            <img id="uploadedImage" alt="Upload an image">
+        </div>
+        
+        <!-- Download Button -->
+        <div class="download-section">
+            <button id="downloadBtn">Download Image</button>
+        </div>
+    </div>
+
+    <!-- Footer Text -->
+    <div class="footer-text">
+        Mate Ejibia
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
